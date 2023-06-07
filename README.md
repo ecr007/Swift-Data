@@ -1,7 +1,7 @@
 # Swift-Data
 > Working with persistence
 
-## 1 - Create struct to save model
+## 1 - Create struct to save model (Optional)
 
 ```swift
 struct Person{
@@ -42,13 +42,28 @@ struct HomeView: App{
 
 ## 5 - Use Entity on child views
 
-```
+```swift
 struct ContentView: View{
-	@FetchRequest(sortDescriptors: []) var persons: FetchedResults<Person>
+	// To manage data environment
+	@Environment(\.managedObjectContext) var moc
+	
+	// Return array with all entities inside on PersonEntity
+	@FetchRequest(sortDescriptors: []) var persons: FetchedResults<PersonEntity>
 	
 	var body: some View{
 		List(persons){ person in
 			Text(person.name ?? "Unknown")
+		}
+		
+		// Add Person
+		Button("Add Person"){
+			var set = PersonEntity(context: moc)
+			set.id = UUID()
+			set.name = "John Doe"
+			set.age = Int16(18)
+			
+			// Persistence
+			try? mod.save()
 		}
 	}
 
