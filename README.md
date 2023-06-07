@@ -14,6 +14,7 @@ struct Person{
 
 1 - File > New > File > Data Model
 2 - Create an Entity by each Model
+3 - Creare Attribute Inside Entity
 
 ## 3 - Create Database Controller
 
@@ -21,7 +22,7 @@ Dependency: Import CoreData
 
 Create Class like ```DataController``` with inheritance ```ObservableObject```
 
-## 4 - Instance Database Controller in the Home of app
+## 4 - Instance Database Controller in the Home of app, set like environment
 
 ```swift
 import SwiftUI
@@ -37,4 +38,18 @@ struct HomeView: App{
 		}
 	}
 }
+```
+
+## 5 - Use Entity on child views
+
+```
+struct ContentView: View{
+	@FetchRequest(sortDescriptors: []) var persons: FetchedResults<Person>
+	
+	var body: some View{
+		List(persons){ person in
+			Text(person.name ?? "Unknown")
+		}
+	}
+
 
