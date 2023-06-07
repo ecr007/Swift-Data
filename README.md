@@ -22,6 +22,22 @@ Dependency: Import CoreData
 
 Create Class like ```DataController``` with inheritance ```ObservableObject```
 
+```swift
+import Fundation
+import CoreData
+
+class DataController: ObservableObject{
+	let container = NSPersistentContainer(name: "DB NAME")
+	
+	init(){
+		container.loadPersistentStores{ description, error
+			if let e = error{
+				print("Error to load database")
+			}
+		}
+	}
+}
+
 ## 4 - Instance Database Controller in the Home of app, set like environment
 
 ```swift
