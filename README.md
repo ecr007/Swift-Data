@@ -36,5 +36,5 @@ struct HomeView: App{
 				.environment(\.managedObjectContext,dataController.container.viewContext)
 		}
 	}
-}s
+}
 
