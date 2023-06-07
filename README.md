@@ -5,8 +5,8 @@
 
 ```swift
 struct Person{
-  var name:String
-  var age:Int
+	var name:String
+	var age:Int
 }
 ```
 
@@ -28,14 +28,13 @@ import SwiftUI
 
 @main
 struct HomeView: App{
-  @StateObject var dataController:DataController = DataController()
+	@StateObject var dataController:DataController = DataController()
   
-  var body: some Scene{
-    WindowGroup{
-      ContentView()
-        .environment(\.managedObjectContext,dataController.container.viewContext)
-    }
-  }
-
+	var body: some Scene{
+		WindowGroup{
+	  		ContentView()
+				.environment(\.managedObjectContext,dataController.container.viewContext)
+		}
+	}
 }
 
