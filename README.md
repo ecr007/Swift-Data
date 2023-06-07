@@ -12,9 +12,9 @@ struct Person{
 
 ## 2  - Create DataBase file
 
-1 - File > New > File > Data Model
-2 - Create an Entity by each Model
-3 - Creare Attribute Inside Entity
+- File > New > File > Data Model
+- Create an Entity by each Model
+- Creare Attribute Inside Entity ```PersonEntity```
 
 ## 3 - Create Database Controller
 
