@@ -37,6 +37,7 @@ class DataController: ObservableObject{
 		}
 	}
 }
+```
 
 ## 4 - Instance Database Controller in the Home of app, set like environment
 
